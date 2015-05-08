@@ -1,12 +1,13 @@
 
 public class Main {
 
-    public static void main(String args[]) {
-        int s = 0;
+    public static void main(String[] args) {
+        int s = 2;
         int count = 0;
-        for (int i = 2; count < 1000; i++) {
+        for (int i = 3; count < 999; i += 2) {
+
             boolean isPrime = true;
-            for (int j = 2; j < i - 1; j++) {
+            for (int j = 3; j < i / 2; j += 2) {
                 if (i % j == 0) {
                     isPrime = false;
                     break;
