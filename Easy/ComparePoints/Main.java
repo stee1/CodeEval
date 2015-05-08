@@ -1,7 +1,14 @@
-public static void main(String args[]) {
 
-        String lines = "0 0 0 0,0 1 0 5,0 5 0 2,0 5 5 5,5 5 0 5,0 5 1 6,0 5 1 4,0 0 -5 5,0 0 -5 -5";
-        for (String line : lines.split(",")) {
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        File file = new File(args[0]);
+        BufferedReader buffer = new BufferedReader(new FileReader(file));
+        String line;
+        while ((line = buffer.readLine()) != null) {
+            line = line.trim();
             short O = Short.valueOf(line.split(" ")[0]);
             short P = Short.valueOf(line.split(" ")[1]);
             short Q = Short.valueOf(line.split(" ")[2]);
@@ -24,3 +31,4 @@ public static void main(String args[]) {
             System.out.println(result);
         }
     }
+}
