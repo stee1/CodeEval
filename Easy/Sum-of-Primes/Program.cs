@@ -6,12 +6,12 @@ namespace CodeEval_TestApp
     {
         static void Main(string[] args)
         {
-            int s = 0;
-            int count = 0;
-            for (int i = 2; count < 1000; i++)
+            int s = 2;
+            int count = 1;
+            for (int i = 3; count < 1000; i+=2)
             {
                 bool isPrime = true;
-                for (int j = 2; j < i - 1; j++)
+                for (int j = 3; j < i / 2; j+=2)
                 {
                     if (i % j == 0)
                     {
