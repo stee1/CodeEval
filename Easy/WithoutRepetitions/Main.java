@@ -9,13 +9,15 @@ public class Main {
         String line;
         while ((line = buffer.readLine()) != null) {
             line = line.trim();
-            for (int i = 0; i < line.length() - 1; i++) {
-                if (line.charAt(i) == line.charAt(i + 1)) {
-                    line = line.replaceAll(line.charAt(i) + "" + line.charAt(i + 1), line.charAt(i) + "");
-                    i--;
+            String res = line.substring(0, 1);
+
+            for (int j = 1, i = 1; i < line.length(); i++) {
+                if (res.charAt(j - 1) != line.charAt(i)) {
+                    res += line.charAt(i);
+                    j++;
                 }
             }
-            System.out.println(line);
+            System.out.println(res);
         }
     }
 }
