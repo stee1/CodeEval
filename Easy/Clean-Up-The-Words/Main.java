@@ -8,13 +8,20 @@ public class Main {
         while ((line = buffer.readLine()) != null) {
             line = line.trim();
             String res = "";
-            char[] input = line.toCharArray();
 
-            for (int i=0; i<input.length-1; i++) {
-                if (Character.isLetter(input[i])) {
-                    res += input[i];
-                    if (!Character.isLetter(input[i+1]))
-                        res += " ";
+            for (int i=0; i<line.length(); i++) {
+                char c = line.charAt(i);
+                if (Character.isLetter(c)) {
+                    do {
+                        res += c;
+                        if (i<line.length()-1) {
+                            i++;
+                            c = line.charAt(i);
+                        }
+                        else break;
+                    }
+                    while (Character.isLetter(c));
+                    res += ' ';
                 }
             }
 
